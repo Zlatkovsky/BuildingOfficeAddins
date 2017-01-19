@@ -1,47 +1,46 @@
 function analyzePopulationGrowth() {
     Excel.run(function (context) {
-        // Create proxy objects to represent the "real" workbook objects
-        // that we'll be working with.  More information on proxy objects 
+        // Create proxy objects to represent entities that are
+        // in the actual workbook. More information on proxy objects 
         // will be presented in the very next section of this chapter.
 
         var originalTable = context.workbook.tables
             .getItem("PopulationTable");
 
         var nameColumn = originalTable.columns.getItem("City");
-        var latestPopulationColumn = originalTable.columns.getItem(
+        var latestDataColumn = originalTable.columns.getItem(
             "7/1/2014 population estimate");
-        var earliestCensusColumn = originalTable.columns.getItem(
+        var earliestDataColumn = originalTable.columns.getItem(
             "4/1/1990 census population");
 
-        // Now, load the values for each of the three columns that we
-        // want to read from.  Note that, to support batching operations
-        // together (again, you'll see more in the upcoming sections
-        // of this chapter), the load doesn't *actually* happen until
-        // we do a "context.sync()", as below.
+        // Now, queue up a command to load the values for each
+        // of the columns we want to read from.  Note that the
+        // actual fetching and returning of the values is
+        // deferred until a "context.sync()".
 
         nameColumn.load("values");
-        latestPopulationColumn.load("values");
-        earliestCensusColumn.load("values");
+        latestDataColumn.load("values");
+        earliestDataColumn.load("values");
 
         return context.sync()
             .then(function () {
-                // Create an in-memory representation of the data, using an 
-                // array that will contain JSON objects representing each city.
+                // Create an in-memory data representation, using an
+                // array with JSON objects representing each city.
                 var citiesData = [];
 
                 // Start at i = 1 (that is, 2nd row of the table --
-                // remember the 0-indexing) in order to skip the header.
+                // remember the 0-indexing) to skip the header.
                 for (var i = 1; i < nameColumn.values.length; i++) {
                     var name = nameColumn.values[i][0];
 
-                    // Note that because the "values" is a 2D array (even if,
-                    // in this particular case, it's just a single column),
-                    // need to extract out the 0th element of each row.
-                    var pop1990 = earliestCensusColumn.values[i][0];
-                    var popLatest = latestPopulationColumn.values[i][0];
+                    // Note that because "values" is a 2D array
+                    // (even if, in this case, it's just a single 
+                    //  column), extract the 0th element of each row.
+                    var pop1990 = earliestDataColumn.values[i][0];
+                    var popLatest = latestDataColumn.values[i][0];
 
-                    // A couple of the cities don't have data for 1990,
-                    // so skip over those.
+                    // A couple of the cities don't have data for 
+                    // 1990,so skip over those.
                     if (isNaN(pop1990) || isNaN(popLatest)) {
                         console.log('Skipping "' + name + '"');
                     }
@@ -58,8 +57,8 @@ function analyzePopulationGrowth() {
                 });
                 var top10 = sorted.slice(0, 10);
 
-                // Now that we've computed the data, create a new worksheet
-                // for the output, and write in the data:
+                // Now that we've computed the data, create a new 
+                // worksheet for the output, and write in the data:
                 var sheetTitle = "Top 10 Growing Cities";
                 var sheetHeaderTitle = "Population Growth 1990 - 2014";
                 var tableCategories = ["Rank", "City", "Population Growth"];
@@ -84,13 +83,14 @@ function analyzePopulationGrowth() {
                         null /* null means "add to end" */,
                         [[i + 1, cityData.name, cityData.growth]]);
 
-                    // Note: even though adding just a single row, the API
-                    // still expects a 2D array for consistency and
-                    // interoperability with Range.values.
+                    // Note: even though adding just a single row,
+                    // the API still expects a 2D array (for 
+                    // consistency and with Range.values)
                 }
 
-                // Auto-fit the column widths, and set uniform thousands-separator
-                // number formatting on the "Population" column of the table.
+                // Auto-fit the column widths, and set uniform 
+                // thousands-separator number-formatting on the
+                // "Population" column of the table.
                 table.getRange().getEntireColumn().format.autofitColumns();
                 table.getDataBodyRange().getLastColumn()
                     .numberFormat = [["#,##"]];
@@ -99,9 +99,10 @@ function analyzePopulationGrowth() {
                 // Finally, with the table in place, add a chart:
                 var fullTableRange = table.getRange();
 
-                // For the chart, no need to show the "Rank", so only use the
-                //     column with the city's name, and expand it one column
-                //     to the right to include the population data as well.
+                // For the chart, no need to show the "Rank", so 
+                // only use the column with the city's name -- and
+                // then expand it one column to the right
+                // to include the population data as well.
                 var dataRangeForChart = fullTableRange
                     .getColumn(1).getResizedRange(0, 1);
 
@@ -110,7 +111,8 @@ function analyzePopulationGrowth() {
                     dataRangeForChart,
                     Excel.ChartSeriesBy.columns);
 
-                chart.title.text = "Population Growth between 1990 and 2014";
+                chart.title.text =
+                    "Population Growth between 1990 and 2014";
 
                 // Position the chart to start below the table,
                 // occupy the full table width, and be 15 rows tall
@@ -125,7 +127,7 @@ function analyzePopulationGrowth() {
 
     }).catch(function (error) {
         console.log(error);
-        // Log additional information, if applicable:
+        // Log additional debug information, if applicable:
         if (error instanceof OfficeExtension.Error) {
             console.log(error.debugInfo);
         }
