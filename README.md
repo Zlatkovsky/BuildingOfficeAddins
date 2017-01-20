@@ -16,9 +16,9 @@ From the book description:
 
 **\#2: Provides readers with a way to log and track content issues (and be informed once they are fixed).  Issues can be:**
 
-  * Simple content issues:  a misspelling, an incomplete phrase, a sentence that no longer makes sense.
+  * Simple content issues: A misspelling, an incomplete phrase, a sentence that no longer makes sense.
   * Requests for additional detail in *existing* topics.
-  * Requests for *brand new topics*.  I might already be planning to write something about it eventually, but this will let you subscribe to finding out when the content is made available; and will also help me gauge topic interest.
+  * Requests for *brand new topics*. I might already be planning to write something about it eventually, but this will let you subscribe to finding out when the content is made available; and will also help me gauge topic interest.
   * Issues with sample code or related assets: code is unclear; the design is sub optimal; something needs a comment; or perhaps an existing comment needs to be clarified or removed.
   * Anything else?
 
