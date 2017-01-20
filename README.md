@@ -2,7 +2,7 @@
 
 ## The everygreen book
 
-This repo is a companion to the book ["Building Office Add-ins using Office.js"](https://leanpub.com/buildingofficeaddins/) -- an "evergreen" e-book published and purchasable through [LeanPub.com](https://leanpub.com/buildingofficeaddins/).
+This repo is a sample-code and issue-tracking companion to the book ["Building Office Add-ins using Office.js"](https://leanpub.com/buildingofficeaddins/) -- an "evergreen" e-book published and purchasable through [LeanPub.com](https://leanpub.com/buildingofficeaddins/).
 
 From the book description:
 
