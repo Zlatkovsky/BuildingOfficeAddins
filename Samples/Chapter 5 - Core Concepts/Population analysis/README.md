@@ -11,5 +11,6 @@ Let's say the data is imported into Excel, into a table called "PopulationData".
 
 **Now, suppose my task is to find the top 10 cities that have experienced the most growth (in absolute numbers) since 1990.  How would I do that?**
 
+***
 
 The code in this folder shows you how to do just that -- both in TypeScript 2.1 (with `async/await`) and using plain ES5 JavaScript.
