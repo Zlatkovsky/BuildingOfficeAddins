@@ -1,4 +1,4 @@
-### Real-world example of multiple `sync`-calls
+### Real-world example of multiple `sync` calls
 
 **SCENARIO: A grade book tool**:
 
@@ -39,5 +39,6 @@ Again, without reading back the values, there is nothing further we can do.  So,
 
 Having retrieved the values, hide any column where the score is equal or greater to 80%, since the teacher's goal is only to discuss problem areas in this meeting (we'll assume that complementing *good* grades will have been done separately). This is where we finally issue a bunch of *write* calls to the object model, where we're manipulating the document, instead of just reading from it. So, to *commit* the pending queue of changes, do a final **sync**.
 
+***
 
 This seems like a reasonable plan, so let's code it up.  The code in this folder shows you how to accomplish this scenario, both with TypeScript 2.1 (i.e., with `async/await`), and with just plain ES5 JavaScript.
