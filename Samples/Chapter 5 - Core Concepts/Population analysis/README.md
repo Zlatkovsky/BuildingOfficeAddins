@@ -6,7 +6,7 @@ To set the context for the sort of code you'll be writing, let's take a very sim
 
 Let's say the data is imported into Excel, into a table called "PopulationData". The table could just as easily have been a named range, or even just a selection -- but having it be a table makes it possible to address columns by name rather than index.  Tables are also very handy for end-users, as they can filter and sort them very easily. Here is a screenshot of a portion of the table:
 
-![The population data, imported into an Excel table](http://buildingofficeaddins.com/wp-content/uploads/2016/07/Canonical-code-sample-initial-table.png)
+![The population data, imported into an Excel table](http://buildingofficeaddins.com/wp-content/uploads/Core-Concepts-Original-Population-Table-Partial.jpg)
 
 
 **Now, suppose my task is to find the top 10 cities that have experienced the most growth (in absolute numbers) since 1990.  How would I do that?**
