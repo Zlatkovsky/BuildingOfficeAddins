@@ -10,10 +10,12 @@
 
 **#3**: Tag your issue with one of the following labels:
 
-* **simple-content-issue:** A misspelling, an incomplete phrase, a sentence that no longer makes sense, etc.
+* **content-issue:** A misspelling, an incomplete phrase, a sentence that no longer makes sense, etc.
 * **needs-more-details:** Requests for additional detail in *existing* topics.
 * **topic-request:** Requests for a *brand new topic*.
 * **sample-code:** Issues with sample code or related assets.
+
+Additionally, if you feel that the issue is urgent, please tag it with **blocker**.
 
 **#4**: Feel free to remove these instructions when you're done. 
 
