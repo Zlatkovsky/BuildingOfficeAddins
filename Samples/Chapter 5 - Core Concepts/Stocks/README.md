@@ -18,5 +18,6 @@ As before, before writing the code, let's do a quick outline of the steps (and s
 5. For each stock symbol, add the appropriate values to the price column. With the value-setting dispatched, queue up the loading of both this table's "Total", and the "Total" from the previous worksheet. (We are reading back the data, instead of computing the current total, so that if the "Total" involves formulas or some other Excel wizardry, that read it back correctly, just as it would show on the worksheet). **sync**.
 6. Having compared the current and previous totals, assign a green (positive) or red (negative) background to the current total cell, and issue one final **sync** command to commit this action.
 
+***
 
 The TypeScript file in this folder will show how to accomplish this scenario -- and also one approach for breaking up a task into smaller subroutines.
