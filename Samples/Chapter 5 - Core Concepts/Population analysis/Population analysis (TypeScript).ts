@@ -1,33 +1,32 @@
 function analyzePopulationGrowth() {
     Excel.run(async (context) => {
-        // Create proxy objects to represent the "real" workbook objects
-        // that we'll be working with.  More information on proxy objects 
+        // Create proxy objects to represent entities that are
+        // in the actual workbook. More information on proxy objects 
         // will be presented in the very next section of this chapter.
 
         let originalTable = context.workbook.tables
             .getItem("PopulationTable");
 
         let nameColumn = originalTable.columns.getItem("City");
-        let latestPopulationColumn = originalTable.columns.getItem(
+        let latestDataColumn = originalTable.columns.getItem(
             "7/1/2014 population estimate");
-        let earliestCensusColumn = originalTable.columns.getItem(
+        let earliestDataColumn = originalTable.columns.getItem(
             "4/1/1990 census population");
 
-        // Now, load the values for each of the three columns that we
-        // want to read from.  Note that, to support batching operations
-        // together (again, you'll see more in the upcoming sections
-        // of this chapter), the load doesn't *actually* happen until
-        // we do a "context.sync()", as below.
+        // Now, queue up a command to load the values for each of
+        // the columns we want to read from.  Note that the actual 
+        // fetching and returning of the values is deferred
+        // until a "context.sync()".
 
         nameColumn.load("values");
-        latestPopulationColumn.load("values");
-        earliestCensusColumn.load("values");
+        latestDataColumn.load("values");
+        earliestDataColumn.load("values");
 
         await context.sync();
 
 
-        // Create an in-memory representation of the data, using an 
-        // array that will contain JSON objects representing each city.
+        // Create an in-memory data representation, using an
+        // array with JSON objects representing each city.
         let citiesData: Array<{name: string, growth: number}> = [];
 
         // Start at i = 1 (that is, 2nd row of the table --
@@ -35,11 +34,11 @@ function analyzePopulationGrowth() {
         for (let i = 1; i < nameColumn.values.length; i++) {
             let name = nameColumn.values[i][0];
 
-            // Note that because the "values" is a 2D array (even if,
-            // in this particular case, it's just a single column),
-            // need to extract out the 0th element of each row.
-            let pop1990 = earliestCensusColumn.values[i][0];
-            let popLatest = latestPopulationColumn.values[i][0];
+            // Note that because "values" is a 2D array
+            // (even if, in this case, it's just a single 
+            //  column), extract the 0th element of each row.
+            let pop1990 = earliestDataColumn.values[i][0];
+            let popLatest = latestDataColumn.values[i][0];
 
             // A couple of the cities don't have data for 1990,
             // so skip over those.
@@ -85,13 +84,14 @@ function analyzePopulationGrowth() {
                 null /* null means "add to end" */,
                 [[i + 1, cityData.name, cityData.growth]]);
 
-            // Note: even though adding just a single row, the API
-            // still expects a 2D array for consistency and
-            // interoperability with Range.values.
+            // Note: even though adding just a single row,
+            // the API still expects a 2D array (for 
+            // consistency and with Range.values)
         }
 
-        // Auto-fit the column widths, and set uniform thousands-separator
-        // number formatting on the "Population" column of the table.
+        // Auto-fit the column widths, and set uniform 
+        // thousands-separator number-formatting on the
+        // "Population" column of the table.
         table.getRange().getEntireColumn().format.autofitColumns();
         table.getDataBodyRange().getLastColumn()
             .numberFormat = [["#,##"]];
@@ -113,8 +113,8 @@ function analyzePopulationGrowth() {
 
         chart.title.text = "Population Growth between 1990 and 2014";
 
-        // Position the chart to start below the table,
-        // occupy the full table width, and be 15 rows tall
+        // Position the chart to start below the table, occupy
+        // the full table width, and be 15 rows tall
         let chartPositionStart = fullTableRange
             .getLastRow().getOffsetRange(2, 0);
         chart.setPosition(chartPositionStart,

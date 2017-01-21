@@ -39,8 +39,8 @@ function analyzePopulationGrowth() {
                     var pop1990 = earliestDataColumn.values[i][0];
                     var popLatest = latestDataColumn.values[i][0];
 
-                    // A couple of the cities don't have data for 
-                    // 1990,so skip over those.
+                    // A couple of the cities don't have data
+                    // for 1990, so skip over those.
                     if (isNaN(pop1990) || isNaN(popLatest)) {
                         console.log('Skipping "' + name + '"');
                     }
