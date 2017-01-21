@@ -8,14 +8,14 @@
 
 **#2**:  Please describe the issue, including *where in the book you've seen the issue*.  Page numbers and section numbers change all the time, so a screenshot or a description of the text before/after is best.  *(Tip: if you use the Snipping tool in Windows, you can capture just the portion of the screen that you'd like, and and then simply paste using Ctrl+V into GitHub -- no need to save the file or do any intermediary steps).* 
 
-**#3**: Tag your issue with one of the following labels:
+**#3**: Preface your issue title with one of the following:
 
-* **content-issue:** A misspelling, an incomplete phrase, a sentence that no longer makes sense, etc.
-* **needs-more-details:** Requests for additional detail in *existing* topics.
-* **topic-request:** Requests for a *brand new topic*.
-* **sample-code:** Issues with sample code or related assets.
+* **[Content issue]:** A misspelling, an incomplete phrase, a sentence that no longer makes sense, etc.
+* **[Needs more details]:** Requests for additional detail in *existing* topics.
+* **[Topic request]:** Requests for a *brand new topic*.
+* **[Sample code]:** Issues with sample code or related assets.
 
-Additionally, if you feel that the issue is urgent, please tag it with **blocker**.
+Thus, a title of an issue might be "***[Topic request]** Add info on different Office namespaces:  Office, OfficeExtension, Excel, Word, etc.*"
 
 **#4**: Feel free to remove these instructions when you're done. 
 
