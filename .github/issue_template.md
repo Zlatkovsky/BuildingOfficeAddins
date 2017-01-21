@@ -6,7 +6,7 @@
 
 > *You can compare the "This version was published on [date]" of your copy of the book (2nd page in the PDF), versus the "Last updated on [date]" at <https://leanpub.com/buildingofficeaddins/> (right beneath the cover image)*
 
-**#2**:  Please describe the issue, including *where in the book you've seen the issue*.  Page numbers and section numbers change all the time, so a screenshot or a description of the text before/after is best.
+**#2**:  Please describe the issue, including *where in the book you've seen the issue*.  Page numbers and section numbers change all the time, so a screenshot or a description of the text before/after is best.  *(Tip: if you use the Snipping tool in Windows, you can capture just the portion of the screen that you'd like, and and then simply paste using Ctrl+V into GitHub -- no need to save the file or do any intermediary steps).* 
 
 **#3**: Tag your issue with one of the following labels:
 
