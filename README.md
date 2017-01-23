@@ -22,6 +22,8 @@ From the book description:
   * Issues with sample code or related assets: code is unclear; the design is sub optimal; something needs a comment; or perhaps an existing comment needs to be clarified or removed.
   * Anything else?
 
+**\#3: Keep track of the [Release notes](Release-Notes.md)**.
+
 &nbsp;
 
 
