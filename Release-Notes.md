@@ -1,5 +1,15 @@
 ## Book release notes
 
+### Version 1.2  (*Feb 20, 2017*)
+
+* Added a topic on the different flavors of Office 2016 / Office 365 -- and the practical implications for developers.
+* Added a topic on API Versioning and Requirement Sets.
+* Greatly expanded the "TypeScript-based Add-ins" topic, adding instructions for the updated Yeoman generator.
+* Added a topic for attaching the debugger to Add-ins (breakpoints, DOM explorer, etc.)
+* Added a link to the book's companion Twitter account.
+* Addressed a number of other reader-reported issues (view the already-addressed ones, or file your issues or topic requests, at <http://buildingofficeaddins.com/issues>).
+
+&nbsp;
 
 ### Version 1.1  (*Jan 22, 2017*)
 
