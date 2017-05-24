@@ -8,8 +8,8 @@ For any issues or topic requests, please file an issue on <http://buildingoffice
 
 ### Version 1.3 (*May 23, 2017*)
  
-* Added an entire section devoted to the [`PropertyNotLoaded` error](#property-not-loaded).
-* Added info about [Script Lab](#script-lab), a playground tool to easily try out code samples described in this book
+* Added an entire section devoted to the `PropertyNotLoaded` error.
+* Added info about [Script Lab](https://aka.ms/scriptlab), a playground tool to easily try out code samples described in this book
 * Addressed a variety of [small reader-reported issues](https://github.com/Zlatkovsky/BuildingOfficeAddins/milestone/5?closed=1).
 
 &nbsp;
