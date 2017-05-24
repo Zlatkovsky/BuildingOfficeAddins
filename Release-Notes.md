@@ -1,5 +1,19 @@
 ## Book release notes
 
+Updates to the book are free for all existing readers (which is what lean-publishing, and the concept of an evergreen book, is all about!).  Simply go to **<https://leanpub.com/user_dashboard/library>**, select the book, and download your newly-updated copy!
+
+For any issues or topic requests, please file an issue on <http://buildingofficeaddins.com/issues>.
+
+&nbsp;
+
+### Version 1.3 (*May 23, 2017*)
+ 
+* Added an entire section devoted to the [`PropertyNotLoaded` error](#property-not-loaded).
+* Added info about [Script Lab](#script-lab), a playground tool to easily try out code samples described in this book
+* Addressed a variety of [small reader-reported issues](https://github.com/Zlatkovsky/BuildingOfficeAddins/milestone/5?closed=1).
+
+&nbsp;
+
 ### Version 1.2  (*Feb 20, 2017*)
 
 * Added a topic on the different flavors of Office 2016 / Office 365 -- and the practical implications for developers.
@@ -7,7 +21,7 @@
 * Greatly expanded the "TypeScript-based Add-ins" topic, adding instructions for the updated Yeoman generator.
 * Added a topic for attaching the debugger to Add-ins (breakpoints, DOM explorer, etc.)
 * Added a link to the book's companion Twitter account.
-* Addressed a number of other reader-reported issues (view the already-addressed ones, or file your issues or topic requests, at <http://buildingofficeaddins.com/issues>).
+* Addressed a number of other [reader-reported issues](https://github.com/Zlatkovsky/BuildingOfficeAddins/milestone/4?closed=1).
 
 &nbsp;
 
