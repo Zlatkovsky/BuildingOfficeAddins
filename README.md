@@ -12,7 +12,7 @@ From the book description:
 
 ## This repo's purpose is to:
 
-**\#1: Allow me to share the larger code samples and associated assets** (e.g., documents with sample data, geared specifically for the scenario)
+**\#1: Allow me to share the larger code samples and associated assets** (e.g., documents with sample data, geared specifically for the scenario).
 
 **\#2: Provides readers with a way to log and track content issues (and be informed once they are fixed).  Issues can be:**
 

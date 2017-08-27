@@ -13,4 +13,10 @@ Let's say the data is imported into Excel, into a table called "PopulationData".
 
 ***
 
-The code in this folder shows you how to do just that -- both in TypeScript 2.1 (with `async/await`) and using plain ES5 JavaScript.
+The code to show you how to do this -- both with the TypeScript `async/await` syntax, and using plain ES5 JavaScript, can be found in in the following Script Lab snippets (see [import instructions](https://github.com/OfficeDev/script-lab/blob/master/README.md#import)):
+
+1. (Recommended) TypeScript code, refactored to split the scenario into multiple subroutines: **fb8913d0a899c88e3ea82773a135dfd0**
+
+2. TypeScript code, all in a single function: **aa81d73587f62f35e46ad6a904bb20df**
+
+3. JavaScript code:  **98d04bc5293e027c84c8c03741698a94**
