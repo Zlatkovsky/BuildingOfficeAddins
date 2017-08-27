@@ -11,6 +11,7 @@ For any issues or topic requests, please file an issue on <http://buildingoffice
 * Major re-structuring of the book, splitting out the former chapters 5 & 6 -- which were bursting at the seams -- into a bunch of smaller chapters.  Also streamlined the rest of the book, moving topics that were less immediately-necessary (e.g., API versioning) further towards the back of the book, to make it faster to get started.
 * As part of the getting-started chapter, added a section for my recommendations of "*The optimal dev environment*"
 * Expanded the section on "*Handling errors*.
+* Added "*Recap: the four basic principles of Office.js*" to the chapter on core Office.js topics.
 * Added runnable Script Lab snippets to "*Canonical code sample: reading data and performing actions on the document*" (including a refactored version that splits the task into multiple subroutines, and a plain ES5 JavaScript variant).
 
 &nbsp;
