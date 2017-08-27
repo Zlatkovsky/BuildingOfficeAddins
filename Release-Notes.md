@@ -6,6 +6,34 @@ For any issues or topic requests, please file an issue on <http://buildingoffice
 
 &nbsp;
 
+### Version 1.6 (*August 26, 2017*) [261 pages]
+
+* Major re-structuring of the book, splitting out the former chapters 5 & 6 -- which were bursting at the seams -- into a bunch of smaller chapters.  Also streamlined the rest of the book, moving topics that were less immediately-necessary (e.g., API versioning) further towards the back of the book, to make it faster to get started.
+* As part of the getting-started chapter, added a section for my recommendations of "*The optimal dev environment*"
+* Expanded the section on "*Handling errors*.
+* Added runnable Script Lab snippets to "*Canonical code sample: reading data and performing actions on the document*" (including a refactored version that splits the task into multiple subroutines, and a plain ES5 JavaScript variant).
+
+&nbsp;
+
+### Version 1.5 (*August 2, 2017*) [249 pages]
+
+* By popular demand, added a massively-detailed (15+ pages) and example-filled section on "*Using objects outside the "linear" `Excel.run` or `Word.run` flow (e.g., in a button-click callback, in a `setInterval`, etc.)*".  Its subsections include:
+  * Re-hydrating an existing Request Context: the overall pattern, proper error-handling, `object.track`, and cleanup of tracked objects]
+  * A common, and infuriatingly silent, mistake:  queueing up actions on the wrong request context
+  * Resuming with multiple objects
+  * Why can't we have a single global request context, and be one happy family?
+* Addressed a couple of [small reader-reported issues](https://github.com/Zlatkovsky/BuildingOfficeAddins/milestone/8?closed=1).
+
+&nbsp;
+
+### Version 1.4 (*July 19, 2017*) [232 pages]
+
+* Added a detailed section for how to check whether an object exists (e.g., whether there's a worksheet by a particular name, whether two ranges intersect, etc). The section also talks about the powerful but unusual "null object" pattern, used in methods and properties suffixed with `*OrNullObject`.
+* Added a section with links to "*API documentation resources*".
+* Addressed a couple of [small reader-reported issues](https://github.com/Zlatkovsky/BuildingOfficeAddins/milestone/7?closed=1).
+
+&nbsp;
+
 ### Version 1.3 (*May 23, 2017*)
  
 * Added an entire section devoted to the `PropertyNotLoaded` error.
